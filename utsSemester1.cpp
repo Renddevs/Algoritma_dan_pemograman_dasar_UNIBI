@@ -44,9 +44,9 @@ int main(){
 	}
 	
 	cout << "Nama nasabah : " << nama;
-	printf("\n Peminjaman : %i \n", pinjaman);
-	printf("Lama Peminjaman : %i thn\n",lama_pinjam);
-	printf("Setoran : %f", setoran);
+	printf("\n Peminjaman : %i", pinjaman);
+	printf("\nLama Peminjaman : %i thn",lama_pinjam);
+	printf("\nSetoran : %f", setoran);
 	endProcces:
 	getch();
 }
