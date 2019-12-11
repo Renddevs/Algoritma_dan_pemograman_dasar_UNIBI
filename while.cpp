@@ -1,13 +1,11 @@
 #include <stdio.h>
 #include <conio.h>
-#include <string.h>
 
 int main(){
-   char name[10];
-   scanf("%s",name);
-   if(strcmp(name,"Rendy") == 0){
-   	printf("Well done");
+   int x;
+   while(x < 100){
+   	printf("Hello Word\n");
+   	x++;
    }
-   
    getch();
 }
