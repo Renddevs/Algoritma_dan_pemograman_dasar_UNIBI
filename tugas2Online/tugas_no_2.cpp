@@ -11,6 +11,7 @@ void main()
     char karakter;
     char updateKarakter;
     bool find = false;
+    int indeks;
     int menu;
     daftarMenu:
     printf("Menu : \n");
@@ -21,6 +22,7 @@ void main()
     printf("5. Tampilkan Karakter-karakter tersebut\n");
     printf("Pilih Menu : ");
     scanf("%i", &menu);
+    clrscr();
     if(menu == 1){
 		printf("Masukan Karakter : ");
         cin >> karakter;
@@ -48,12 +50,24 @@ void main()
     getch();
     goto daftarMenu;
     }else if(menu == 3){
+    	printf("Masukan indeks karakter yang akan dihapus : ");
+      cin >> karakter;
+      for(int k = 0; arrayKarakter[k] != '\0'; k++){
+          if(arrayKarakter[k] == karakter){
+          	indeks = k;
+            break;
+          }
+		}
+
+      for(int i=indeks; arrayKarakter[i] != '\0'; i++){
+          arrayKarakter[i] = arrayKarakter[i+1];
+		}
+		goto daftarMenu;
     }else if(menu == 4){
       printf("Masukan karakter yang akan diubah : ");
       scanf(" %c", &karakter);
       printf("Masukan karakter baru : ");
       scanf(" %c", &updateKarakter);
-
     	for(int i=0; arrayKarakter[i] != '\0'; i++){
       	if(arrayKarakter[i] == karakter){
          	arrayKarakter[i] = updateKarakter;
