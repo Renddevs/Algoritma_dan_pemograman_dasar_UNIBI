@@ -1,0 +1,9 @@
+#include <iostream>
+#include <stdio.h>
+#include <conio.h>
+ int main(){
+ 	char karakter[10];
+ 	int menu;
+ 	cout <<
+ 	return 0;
+ }
