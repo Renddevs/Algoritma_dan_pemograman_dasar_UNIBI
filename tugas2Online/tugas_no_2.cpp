@@ -24,21 +24,23 @@ void main()
     scanf("%i", &menu);
     clrscr();
     if(menu == 1){
-		printf("Masukan Karakter : ");
-        cin >> karakter;
-        if(sizeof(arrayKarakter)/sizeof(arrayKarakter[0]) == 0){
-        	arrayKarakter[0] = karakter;
-		}else{
-			arrayKarakter[(sizeof(arrayKarakter)/sizeof(arrayKarakter[0]))-((sizeof(arrayKarakter)/sizeof(arrayKarakter[0]))-indeksArray)] = karakter;
-		}
-		indeksArray++;
-		goto daftarMenu;
+   	printf("Masukan Karakter : ");
+   	cin >> karakter;
+   	if(sizeof(arrayKarakter)/sizeof(arrayKarakter[0]) == 0){
+   		arrayKarakter[0] = karakter;
+   	}else{
+   		arrayKarakter[(sizeof(arrayKarakter)/sizeof(arrayKarakter[0]))-((sizeof(arrayKarakter)/sizeof(arrayKarakter[0]))-indeksArray)] = karakter;
+   	}
+   	indeksArray++;
+      clrscr();
+   	goto daftarMenu;
     }else if(menu == 2){
     	printf("Masukan karakter yang akan dicari : ");
       cin >> karakter;
       for(int i=0; arrayKarakter[i] != '\0'; i++){
     		if(karakter == arrayKarakter[i]){
-         	printf("Karakter %c ada di indeks ke-%i",karakter,i);
+         	printf("Karakter ditemukan !\n");
+         	printf("Karakter %c berada di indeks ke-%i",karakter,i);
             find = true;
             break;
          }
@@ -48,6 +50,7 @@ void main()
       	printf("Karakter tidak ditemukan");
       }
     getch();
+    clrscr();
     goto daftarMenu;
     }else if(menu == 3){
     	printf("Masukan indeks karakter yang akan dihapus : ");
@@ -62,6 +65,7 @@ void main()
       for(int i=indeks; arrayKarakter[i] != '\0'; i++){
           arrayKarakter[i] = arrayKarakter[i+1];
 		}
+      clrscr();
 		goto daftarMenu;
     }else if(menu == 4){
       printf("Masukan karakter yang akan diubah : ");
@@ -73,16 +77,18 @@ void main()
          	arrayKarakter[i] = updateKarakter;
          }
 		}
+      clrscr();
       goto daftarMenu;
     }else if(menu == 5){
     	for(int i=0; arrayKarakter[i] != '\0'; i++){
     		printf("Karakter-%i : %c\n",i+1,arrayKarakter[i]);
 		}
     	getch();
+      clrscr();
     	goto daftarMenu;
     }else{
+    	clrscr();
     	goto daftarMenu;
     }
-
     getch();
 }
